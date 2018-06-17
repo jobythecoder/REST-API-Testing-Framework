@@ -11,9 +11,5 @@
         <module name="restapi (3)" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="restapi (2)" target="1.5" />
-      <module name="restapi (3)" target="1.5" />
-    </bytecodeTargetLevel>
   </component>
 </project>
