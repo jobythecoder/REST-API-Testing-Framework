@@ -1,6 +1,6 @@
 # WebAPIAutomationFramework
 
-### execute the project
+### Steps to execute the Tests
 - open windows/mac terminal and go to project folder
 - Run "mvn test"
 
