@@ -32,8 +32,7 @@ public class CustomerWebLoginTest extends TestBase{
 		testBase = new TestBase();
 		serviceUrl = prop.getProperty("URL");
 		apiUrl = prop.getProperty("serviceURL");
-		//https://reqres.in/api/users
-		
+
 		url = serviceUrl + apiUrl;
 		
 	}
@@ -44,42 +43,40 @@ public class CustomerWebLoginTest extends TestBase{
 		restClient = new RestClient();
 		HashMap<String, String> headerMap = new HashMap<String, String>();
 		headerMap.put("Content-Type", "application/json");
-		
+
 		//jackson API:
 		ObjectMapper mapper = new ObjectMapper();
 		Users users = new Users("test-user", "abc123"); //expected users obejct
-		
+
 		//object to json file:
 		mapper.writeValue(new File("/Users/Joby Joseph/Documents/eclipse-workspace/jobythecoder/APIAutomationFramework/src/main/java/com/qa/data/users.json"), users);
-		
+
 		//java object to json in String:
 		String usersJsonString = mapper.writeValueAsString(users);
 		System.out.println(usersJsonString);
-		
+
 		closebaleHttpResponse = restClient.post(url, usersJsonString, headerMap); //call the API
-		
+
 		//validate response from API:
 		//1. status code:
 		int statusCode = closebaleHttpResponse.getStatusLine().getStatusCode();
-		Assert.assertEquals(statusCode, testBase.RESPONSE_STATUS_CODE_201);
-		
+		Assert.assertEquals(statusCode, testBase.RESPONSE_STATUS_CODE_200);
+
 		//2. JsonString:
 		String responseString = EntityUtils.toString(closebaleHttpResponse.getEntity(), "UTF-8");
-		
+
 		JSONObject responseJson = new JSONObject(responseString);
 		System.out.println("The response from API is:"+ responseJson);
-		
+
 		//json to java object:
 		Users usersResObj = mapper.readValue(responseString, Users.class); //actual users object
 		System.out.println(usersResObj);
-		
-		Assert.assertTrue(users.getName().equals(usersResObj.getName()));
+
+		Assert.assertTrue(users.getUsername().equals(usersResObj.getUsername()));
 
 		Assert.assertTrue(users.getPassword().equals(usersResObj.getPassword()));
-		
-		System.out.println(usersResObj.getId());
-		System.out.println(usersResObj.getCreatedAt());
-		
+
+
 	}
 
 }

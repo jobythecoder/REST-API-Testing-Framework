@@ -1,35 +1,28 @@
 package com.qa.data;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 //pojo - plain old java object
 public class Users {
 
-	String name;
+	String username;
 	String password;
-	String id;
-	String createdAt;
-	
-	
 
 	public Users() {
 
 	}
 
-	public Users(String name, String password) {
-		this.name = name;
+	public Users(String username, String password) {
+		this.username = username;
 		this.password = password;
 	}
 
 	
 	//getters and setters methods:
-	public String getName() {
-		return name;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -39,24 +32,5 @@ public class Users {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getCreatedAt() {
-		return createdAt;
-	}
-
-	public void setCreatedAt(String createdAt) {
-		this.createdAt = createdAt;
-	}
-
-	
-
 
 }

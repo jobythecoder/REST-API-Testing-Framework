@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" username="Failed suite [Default suite]">
+  <test username="Default test(failed)">
     <classes>
-      <class name="com.qa.tests.CustomerWebLoginTest">
+      <class username="com.qa.tests.CustomerWebLoginTest">
         <methods>
-          <include name="setUp"/>
-          <include name="postAPITest"/>
+          <include username="setUp"/>
+          <include username="postAPITest"/>
         </methods>
       </class> <!-- com.qa.tests.CustomerWebLoginTest -->
     </classes>
