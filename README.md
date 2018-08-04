@@ -1,4 +1,4 @@
-## README - Contents
+# Contents
 - REST API AutomationFramework in Java
 - Steps to Excecute
 - Steps to View the Test Reports
