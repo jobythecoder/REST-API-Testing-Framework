@@ -1,7 +1,5 @@
 # Contents
-- WebAPIAutomationFramework
-- Microservices Testing Strategies[pdf document]
-
+- RESTAPIAutomationFramework
 ## WebAPIAutomationFramework
 
 ### Steps to execute the Tests
